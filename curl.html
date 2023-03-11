@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Página com Corpo Azul e Caixa de Texto</title>
+    <style>
+      body {
+        background-color: blue;
+      }
+      input[type="text"] {
+        background-color: blue;
+        color: white;
+        border: none;
+      }
+      textarea{
+        background-color: blue;
+        color: white;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <br>
+    <input id="c1" type="text" placeholder="mostrar" /><br>
+    <button id="myButton" onclick="changeText()">Clique aqui!</button><br>
+    <iframe id="frcs" src="" width="500" height="300"></iframe><br>
+    <button id="myButton2" onclick="changeText2()">Ver Codigo</button><br>
+    <textarea  id="b1" rows="10" cols="75" style="width: 600px; height: 430px;"></textarea><br>
+    <script>
+      
+  
+      function changeText2() {
+        var html = document.getElementById("frcs").contentWindow.document.documentElement.outerHTML;
+        document.getElementById("b1").value=html;
+}
+      function changeText() {
+        let srcs=document.getElementById("c1").value;
+        
+        var v=document.getElementById("frcs");
+
+        v.src=srcs;
+      }
+      </script>
+  </body>
+</html>
+
